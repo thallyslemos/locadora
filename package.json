@@ -1,0 +1,24 @@
+{
+  "name": "conquista-car",
+  "version": "1.0.0",
+  "description": "Projeto avaliativo da terceira unidade de Programação Web 2024.2",
+  "main": "src/server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js"
+  },
+  "author": "thallysvilemos@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "prisma": "^6.3.1"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.3.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.21.2"
+  }
+}
