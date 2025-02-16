@@ -1,0 +1,76 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id        Int                @id @default(autoincrement())
+  nome      String
+  identidade String
+  CNH       String
+  endereco  String
+  idade     Int
+  tipo      String
+  FuncionarioPublico FuncionarioPublico?
+  Locacoes  Locacao[]
+}
+
+model FuncionarioPublico {
+  id       Int       @id @default(autoincrement())
+  usuario_id Int     @unique
+  orgao    String
+  usuario  Usuario   @relation(fields: [usuario_id], references: [id])
+}
+
+model Automovel {
+  id          Int       @id @default(autoincrement())
+  chassi      String
+  placa       String
+  marca       String
+  modelo      String
+  ano         Int
+  cor         String
+  categoria_id Int
+  categoria   Categoria @relation(fields: [categoria_id], references: [id])
+  Locacoes    Locacao[]
+  Concertos   Concerto[]
+}
+
+model Categoria {
+  id                  Int        @id @default(autoincrement())
+  nome                String
+  preco_diaria        Float
+  descricao           String
+  exclusividade_funcionarios Boolean
+  automoveis          Automovel[]
+}
+
+model Locacao {
+  id         Int       @id @default(autoincrement())
+  usuario_id Int
+  automovel_id Int
+  data_hora  DateTime
+  usuario    Usuario   @relation(fields: [usuario_id], references: [id])
+  automovel  Automovel @relation(fields: [automovel_id], references: [id])
+}
+
+model Concerto {
+  id         Int       @id @default(autoincrement())
+  automovel_id Int
+  data       DateTime
+  descricao  String
+  valor      Float
+  oficina    String
+  automovel  Automovel @relation(fields: [automovel_id], references: [id])
+}
+
