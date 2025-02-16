@@ -15,9 +15,11 @@ app.use('/api', veiculoRoutes);
 app.use('/api', aluguelRoutes);
 app.use('/api', userRoutes);
 app.use('/api', categoriaRoutes);
+app.use('/views', express.static('src/views'));
+
 app.use((err, req, res, next) => {
     console.error(err);
     res.status(500).json({ message: 'Something went wrong' });
-    });
+});
 
 module.exports = app;

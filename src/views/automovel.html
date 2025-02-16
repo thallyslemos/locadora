@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Automóveis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Gerenciar Automóveis</h1>
+        <form id="automovelForm" class="categoria-form">
+            <input type="hidden" id="id" name="id">
+            <div class="form-group">
+                <label for="chassi">Chassi:</label>
+                <input type="text" id="chassi" name="chassi" required>
+            </div>
+            <div class="form-group">
+                <label for="placa">Placa:</label>
+                <input type="text" id="placa" name="placa" required>
+            </div>
+            <div class="form-group">
+                <label for="marca">Marca:</label>
+                <input type="text" id="marca" name="marca" required>
+            </div>
+            <div class="form-group">
+                <label for="modelo">Modelo:</label>
+                <input type="text" id="modelo" name="modelo" required>
+            </div>
+            <div class="form-group">
+                <label for="ano">Ano:</label>
+                <input type="number" id="ano" name="ano" required>
+            </div>
+            <div class="form-group">
+                <label for="cor">Cor:</label>
+                <input type="text" id="cor" name="cor" required>
+            </div>
+            <div class="form-group">
+                <label for="categoria_id">Categoria:</label>
+                <select id="categoria_id" name="categoria_id" required>
+                    <option value="">Selecione uma categoria</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button type="submit">Salvar</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </form>
+        <div id="automovelList" class="categoria-list"></div>
+    </div>
+    <script src="automovel.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Categorias</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Gerenciar Categorias</h1>
+        <form id="categoriaForm" class="categoria-form">
+            <input type="hidden" id="id" name="id">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" name="descricao" required>
+            </div>
+            <div class="form-group">
+                <label for="preco_diaria">Preço Diária:</label>
+                <input type="number" id="preco_diaria" name="preco_diaria" step="0.01" required>
+            </div>
+            <div class="form-group checkbox">
+                <label>
+                    <input type="checkbox" id="exclusividade_funcionarios" name="exclusividade_funcionarios">
+                    Exclusivo para Funcionários
+                </label>
+            </div>
+            <div class="form-actions">
+                <button type="submit">Salvar</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </form>
+        <div id="categoriaList" class="categoria-list"></div>
+    </div>
+    <script src="categoria.js"></script>
+</body>
+</html>

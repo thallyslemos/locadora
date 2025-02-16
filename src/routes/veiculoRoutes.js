@@ -4,7 +4,7 @@ const veiculoController = require('../controllers/veiculoController');
 
 router.get('/veiculos', veiculoController.getVeiculos);
 router.post('/veiculos', veiculoController.createVeiculo);
-
-// Adicione mais rotas conforme necessário (update, delete, etc.)
+router.put('/veiculos/:id', veiculoController.updateVeiculo);
+router.delete('/veiculos/:id', veiculoController.deleteVeiculo);
 
 module.exports = router;
