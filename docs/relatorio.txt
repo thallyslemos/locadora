@@ -1,0 +1,140 @@
+
+
+
+
+
+
+
+
+ConquistaCar LOCADORA DE VEÍCULOS
+RELATÓRIO  DE DESENVOLVIMENTO 
+
+
+
+
+Thallys Viana Lemos
+
+
+
+
+
+
+
+
+
+
+
+
+Vitória da Conquista
+Fevereiro, 2025
+
+
+
+
+
+
+
+LOCADORA DE VEÍCULOS
+
+Relatório de desenvolvimento de aplicação web apresentado como requisito parcial para obtenção de aprovação na disciplina de Programação Web, do Curso de Bacharelado em Sistemas de Informação, do Instituto Federal de Educação, Ciência e Tecnologia da Bahia, Campus Vitória da Conquista.
+
+
+
+Thallys VIana Lemos
+
+
+
+
+
+
+
+
+
+Vitória da Conquista
+Fevereiro, 2025
+SUMÁRIO
+
+1. INTRODUÇÃO	3
+2. CONTEXTUALIZAÇÃO	3
+3. IMPLEMENTAÇÃO	3
+4. CONFIGURAÇÃO DE AMBIENTE	4
+5. ORIENTAÇÕES DE USO	4
+6. CONCLUSÕES	4
+
+
+INTRODUÇÃO
+A presente aplicação web foi desenvolvida para gerenciar uma locadora de automóveis, permitindo o cadastro de usuários, automóveis, categorias de veículos e o registro das locações realizadas. A solução inclui um backend implementado em Node.js utilizando o Prisma ORM para manipulação do banco de dados, enquanto a interface do usuário foi desenvolvida com HTML, CSS e JavaScript.
+
+CONTEXTUALIZAÇÃO
+A locadora de automóveis necessita manter um cadastro de seus usuários, separando aqueles que são funcionários públicos, pois alguns veículos só podem ser locados por esse grupo. Os veículos são categorizados e têm seu histórico de locações e concertos registrados.
+Requisitos principais:
+Cadastro de usuários e automóveis
+Registro de locações
+Gerenciamento de categorias de automóveis
+Histórico de concertos
+Modelagem do Banco de Dados: As entidades principais e seus relacionamentos são:
+Usuário (id, nome, identidade, CNH, endereço, idade, tipo)
+Funcionário Público (usuário_id, órgão)
+Automóvel (id, chassi, placa, marca, modelo, ano, cor, categoria_id)
+Categoria (id, nome, preço_diária, descrição, exclusividade_funcionarios)
+Locação (id, usuario_id, automovel_id, data_hora)
+Concerto (id, automovel_id, data, descrição, valor, oficina)
+Vale resaltar que os campos terminados com o prefixo “_id” correspondem às chaves estrangeiras das tabelas, configurando os relacionamentos entre as entidades.
+
+
+IMPLEMENTAÇÃO
+A aplicação foi desenvolvida utilizando as seguintes tecnologias:
+Backend: Node.js com Express.js
+Banco de Dados: PostgreSQL com Prisma ORM
+Frontend: HTML, CSS e JavaScript
+Ferramentas auxiliares: Nodemon para reinicialização automática do servidor durante o desenvolvimento
+Exemplo de organização de pacotes:
+/src
+  /routes
+  /controllers
+  /models
+  /views
+
+Exemplo de rota para cadastrar um usuário:
+
+
+Nesta seção, discute-se a aplicação de linguagens, bibliotecas e frameworks front-end e back-end empregadas no desenvolvimento da aplicação web.
+Admite-se inclusão de trechos de codificação desenvolvida para melhor exemplificação de conceitos a serem abordados. Ao apresentar trechos de codificação, estes devem ser ilustrados com tabelas constituídas de apenas uma linha e duas colunas que não possuirão margens em relação ao seu conteúdo; a primeira coluna deve ser usada para indicação da numeração das linhas de código, ao passo que as próprias linhas de códigos devem ser posicionadas na segunda coluna. Em relação às dimensões da tabela, esta deve ocupar toda a largura útil da página e sua primeira coluna deve ocupar largura suficiente para acomodação dos números das linhas de código (a largura restante deve ser destinada para a segunda coluna). São exigidas ainda bordas apenas em suas laterais superiores e inferiores. Para o texto, use alinhamento à esquerda, espaçamento simples entre linhas, nenhum espaçamento antes e após cada parágrafo, nenhum recuo à esquerda e à direita, fonte Courier New, tamanho 10. Um exemplo hipotético segue-se abaixo.
+1
+2
+3
+4
+5
+
+N
+Linha de Código 1
+Linha de Código 2
+Linha de Código 3
+Linha de Código 4
+Linha de Código 5
+...
+Linha de Código N
+
+Tabela 1: Exemplo de trecho de codificação
+Dada a exigência de conectividade com banco de dados para realização de operações CRUD, informações sobre a modelagem lógica e física das informações mantidas em tal banco de dados também devem ser apresentadas nesta seção. Admite-se, inclusive, apresentação de Diagrama de Entidade Relacionamento ou, em se tratando de banco de dados não relacional empregado na aplicação, de algo similar àquele diagrama.
+
+CONFIGURAÇÃO DE AMBIENTE
+Instalar Node.js e PostgreSQL
+Clonar o repositório do projeto
+Instalar dependências com npm install
+Configurar o banco de dados no arquivo .env
+Rodar migrações com npx prisma migrate dev
+Iniciar a aplicação com npm run dev
+
+
+ORIENTAÇÕES DE USO
+O sistema apresenta uma interface simples para gestão da locadora:
+Cadastro de usuários: Formulário com campos obrigatórios
+Registro de locação: Selecionar um usuário e um automóvel disponível
+Histórico de concertos: Visualização dos reparos já realizados
+Filtros: Buscar locações por usuário, carro ou período
+Captura de tela da aplicação (a ser inserida)
+
+
+CONCLUSÕES
+O desenvolvimento desta aplicação web permitiu a implementação de conceitos fundamentais de desenvolvimento full-stack. Como melhorias futuras, sugere-se a implementação de autenticação de usuários e um dashboard analítico para gestão da locadora.
