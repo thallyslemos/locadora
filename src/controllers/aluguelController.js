@@ -13,3 +13,11 @@ exports.createAluguel = async (req, res) => {
   });
   res.json(aluguel);
 };
+
+exports.deleteAluguel = async (req, res) => {
+  const { id } = req.params;
+  await prisma.locacao.delete({
+    where: { id: parseInt(id) }
+  });
+  res.status(204).end();
+}

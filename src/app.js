@@ -5,6 +5,7 @@ const veiculoRoutes = require('./routes/veiculoRoutes');
 const aluguelRoutes = require('./routes/aluguelRoutes');
 const userRoutes = require('./routes/usuarioRoutes');
 const categoriaRoutes = require('./routes/categoriaRoutes');
+const concertosRoutes = require('./routes/concertoRoutes');
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
@@ -13,6 +14,7 @@ app.use('/api', veiculoRoutes);
 app.use('/api', aluguelRoutes);
 app.use('/api', userRoutes);
 app.use('/api', categoriaRoutes);
+app.use('/api', concertosRoutes)
 app.use('/views', express.static('src/views'));
 
 app.use((err, req, res, next) => {
