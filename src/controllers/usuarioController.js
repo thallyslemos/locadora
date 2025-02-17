@@ -44,6 +44,24 @@ exports.getUsuarios = async (req, res) => {
   }
 };
 
+exports.getUsuario = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const usuario = await prisma.usuario.findUnique({
+      where: { id: parseInt(id) },
+      include: {
+        FuncionarioPublico: true
+      }
+    });
+    if (!usuario) {
+      return res.status(404).json({ error: 'Usuário não encontrado' });
+    }
+    res.status(200).json(usuario);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao buscar usuário' });
+  }
+};
+
 exports.updateUsuario = async (req, res) => {
   const { id } = req.params;
   const { nome, identidade, CNH, endereco, idade, tipo, FuncionarioPublico } = req.body;

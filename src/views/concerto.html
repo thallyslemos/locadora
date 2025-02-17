@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Concertos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Gerenciar Concertos</h1>
+        <form id="concertoForm" class="categoria-form">
+            <input type="hidden" id="id" name="id">
+            <div class="form-group">
+                <label for="automovel_id">Automóvel:</label>
+                <select id="automovel_id" name="automovel_id" required>
+                    <option value="">Selecione um automóvel</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" required>
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição do Serviço:</label>
+                <textarea id="descricao" name="descricao" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="valor">Valor:</label>
+                <input type="number" id="valor" name="valor" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="oficina">Oficina:</label>
+                <input type="text" id="oficina" name="oficina" required>
+            </div>
+            <div class="form-actions">
+                <button type="submit">Registrar Concerto</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </form>
+        <div id="concertoList" class="categoria-list"></div>
+    </div>
+    <script src="layout.js"></script>
+    <script src="concerto.js"></script>
+</body>
+</html>
