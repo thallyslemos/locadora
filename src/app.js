@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const clienteRoutes = require('./routes/clienteRoutes');
 const veiculoRoutes = require('./routes/veiculoRoutes');
 const aluguelRoutes = require('./routes/aluguelRoutes');
 const userRoutes = require('./routes/usuarioRoutes');
@@ -10,7 +9,6 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 app.use(express.json());
-app.use('/api', clienteRoutes);
 app.use('/api', veiculoRoutes);
 app.use('/api', aluguelRoutes);
 app.use('/api', userRoutes);

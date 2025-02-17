@@ -3,7 +3,6 @@ const prisma = new PrismaClient();
 
 exports.getCategorias = async (req, res) => {
     const categorias = await prisma.categoria.findMany();
-    console.log(categorias);
     res.json(categorias);
 };
 

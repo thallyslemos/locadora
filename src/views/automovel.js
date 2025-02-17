@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('automovelForm');
     const automovelList = document.getElementById('automovelList');
     const categoriaSelect = document.getElementById('categoria_id');
-    console.log('automovel.js loaded');
 
     async function loadCategorias() {
         try {

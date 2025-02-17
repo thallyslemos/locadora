@@ -3,7 +3,6 @@ const prisma = new PrismaClient();
 
 exports.getVeiculos = async (req, res) => {
   const veiculos = await prisma.automovel.findMany();
-  console.log(veiculos);
   res.json(veiculos);
 };
 

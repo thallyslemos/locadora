@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('categoriaForm');
     const categoriaList = document.getElementById('categoriaList');
-    console.log('categoria.js loaded');
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -19,8 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const method = data.id ? 'PUT' : 'POST';
-            console.log('data:', data);
-            console.log('method:', method);
             const url = data.id ? `/api/categorias/${data.id}` : '/api/categorias';
 
             const response = await fetch(url, {
