@@ -16,7 +16,6 @@ exports.getConcertos = async (req, res) => {
 };
 
 exports.createConcerto = async (req, res) => {
-    console.log(req.body);
     const { automovel_id, data, descricao, valor, oficina } = req.body;
     try {
         const concerto = await prisma.concerto.create({

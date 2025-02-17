@@ -2,7 +2,6 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient()
 
 async function main() {
-  //limpa o banco de dados
   await prisma.locacao.deleteMany()
   await prisma.concerto.deleteMany()
   await prisma.automovel.deleteMany()
@@ -10,7 +9,6 @@ async function main() {
   await prisma.funcionarioPublico.deleteMany()
   await prisma.usuario.deleteMany()
 
-  // Cria categorias
   const categorias = await Promise.all([
     prisma.categoria.create({
       data: {
@@ -30,7 +28,6 @@ async function main() {
     }),
   ])
 
-  // Cria usuários
   const usuarios = await Promise.all([
     prisma.usuario.create({
       data: {
@@ -59,7 +56,6 @@ async function main() {
     })
   ])
 
-  // Cria veículos
   const automoveis = await Promise.all([
     prisma.automovel.create({
       data: {
@@ -85,7 +81,6 @@ async function main() {
     })
   ])
 
-  // cria locações
   await prisma.locacao.create({
     data: {
       usuario_id: usuarios[0].id,
@@ -94,7 +89,6 @@ async function main() {
     }
   })
 
-  // Create concertos
   await prisma.concerto.create({
     data: {
       automovel_id: automoveis[0].id,
@@ -105,7 +99,7 @@ async function main() {
     }
   })
 
-  console.log('Seed completed successfully!')
+  console.log('Seed executado com sucesso!')
 }
 
 main()

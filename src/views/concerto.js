@@ -127,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             concertoList.innerHTML = '<p>Carregando concertos...</p>';
             const response = await fetch('/api/concertos');
-            console.log(response);
             if (!response.ok) throw new Error('Erro ao carregar concertos');
             const concertos = await response.json();
             concertoList.innerHTML = '';

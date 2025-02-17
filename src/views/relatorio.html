@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Relatórios do Sistema</h1>
+        
+        <div class="relatorio-section">
+            <h2>Locações por Período</h2>
+            <div class="form-group">
+                <label for="data_inicio">Data Início:</label>
+                <input type="date" id="data_inicio" name="data_inicio">
+                <label for="data_fim">Data Fim:</label>
+                <input type="date" id="data_fim" name="data_fim">
+                <button onclick="gerarRelatorioLocacoes()">Gerar Relatório</button>
+            </div>
+            <div id="locacoesReport" class="report-container"></div>
+        </div>
+
+        <div class="relatorio-section">
+            <h2>Histórico de Concertos por Veículo</h2>
+            <div class="form-group">
+                <select id="veiculo_id" name="veiculo_id">
+                    <option value="">Selecione um veículo</option>
+                </select>
+                <button onclick="gerarRelatorioConcertos()">Gerar Relatório</button>
+            </div>
+            <div id="concertosReport" class="report-container"></div>
+        </div>
+
+        <div class="relatorio-section">
+            <h2>Veículos por Categoria</h2>
+            <div class="form-group">
+                <select id="categoria_id" name="categoria_id">
+                    <option value="">Todas as categorias</option>
+                </select>
+                <button onclick="gerarRelatorioVeiculos()">Gerar Relatório</button>
+            </div>
+            <div id="veiculosReport" class="report-container"></div>
+        </div>
+    </div>
+    <script src="layout.js"></script>
+    <script src="relatorio.js"></script>
+</body>
+</html>

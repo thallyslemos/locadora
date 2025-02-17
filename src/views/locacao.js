@@ -84,13 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function displayLocacao(locacao) {
-        console.log('Displaying locacao:', locacao);
         try {
-            // Buscar dados do usuário e do automóvel se não estiverem incluídos
             let usuario = locacao.usuario;
             let automovel = locacao.automovel;
-
-            console.log('Usuario:', usuario);
 
             if (!usuario || !automovel) {
                 const [usuarioResponse, automovelResponse] = await Promise.all([
