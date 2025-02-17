@@ -19,6 +19,7 @@ header {
     height: 100vh;
     position: fixed;
     top: 50px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
 
 .sidebar a {
@@ -26,10 +27,21 @@ header {
     padding: 10px;
     text-decoration: none;
     color: #333;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #ddd;
 }
 
 .sidebar a:hover {
     background-color: #ddd;
+}
+
+.sidebar a.active {
+    background-color: #333;
+    color: white;
+}
+
+.sidebar a:first-child {
+    border-top: 1px solid #ddd;
 }
 
 .content {
@@ -132,4 +144,105 @@ form input, form button {
 .categoria-actions button:last-child {
     background: #f44336;
     color: white;
+}
+
+.welcome-message {
+    text-align: center;
+    padding: 40px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.welcome-message h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.welcome-message p {
+    color: #666;
+}
+
+.error-message {
+    padding: 20px;
+    background: #fee;
+    border: 1px solid #faa;
+    border-radius: 4px;
+    margin: 20px;
+}
+
+.error-message h3 {
+    color: #a00;
+    margin-bottom: 10px;
+}
+
+.welcome-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.info-section {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.info-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+}
+
+.info-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.info-section ul li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.info-section ul li:before {
+    content: "•";
+    color: #4CAF50;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.module-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: transform 0.2s;
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.module-card h4 {
+    color: #4CAF50;
+    margin: 0 0 10px 0;
+}
+
+.module-card p {
+    color: #666;
+    margin: 0;
+    font-size: 0.9em;
 }
