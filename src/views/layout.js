@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="sidebar">
             <a href="categoria.html" ${window.location.pathname.includes('categoria') ? 'class="active"' : ''}>Categorias</a>
             <a href="automovel.html" ${window.location.pathname.includes('automovel') ? 'class="active"' : ''}>Automóveis</a>
+            <a href="usuario.html" ${window.location.pathname.includes('usuario') ? 'class="active"' :
+        ''}>Usuários</a>
+        
         </div>
     `;
     
